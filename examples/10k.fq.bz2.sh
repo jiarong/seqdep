@@ -14,14 +14,14 @@ Reps=10
 
 Trimmed_length=90
 # Subsample reads from original read data
-Subsample_seq_num=5000
+Subsample_seq_num=1000000
 # Subsample representatives from abundance table
-Subsample_rep_num=2000
+Subsample_rep_num=500000
 
 Scriptdir=/mnt/home/guojiaro/Documents/software/gits/seqdep/scripts
 Ksize=21
 
-Hashsize=250000000
+Hashsize=1000000000
 
 #
 # change parameters above
@@ -45,7 +45,7 @@ mkdir -p $Outdir
 cd $Outdir
 
 echo "loading counting table.."
-python $Scriptdir/trim-seq-by-len.py $Readfile $Trimmed_length $Subsample_seq_num _U/2 - |\
+python $Scriptdir/trim-seq-by-len.py $Readfile $Trimmed_length $Subsample_seq_num /2 - |\
 tee $Bname.subseq.$Subsample_seq_num | \
 load-into-counting.py -k $Ksize -x $Hashsize -N 4 $Bname.subseq.$Subsample_seq_num.ht -
 echo "loading counting table finished.."
