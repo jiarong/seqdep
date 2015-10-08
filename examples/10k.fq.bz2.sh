@@ -14,9 +14,9 @@ Reps=10
 
 Trimmed_length=90
 # Subsample reads from original read data
-Subsample_seq_num=50000000
+Subsample_seq_num=5000
 # Subsample representatives from abundance table
-Subsample_rep_num=1000000
+Subsample_rep_num=2000
 
 Scriptdir=/mnt/home/guojiaro/Documents/software/gits/seqdep/scripts
 Ksize=21
